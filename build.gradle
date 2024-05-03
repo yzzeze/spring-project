@@ -20,6 +20,12 @@ subprojects {
     apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
 
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
     dependencies {
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
     }
