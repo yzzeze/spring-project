@@ -2,4 +2,13 @@ bootJar { enabled = false }
 jar { enabled = true }
 
 dependencies {
+    implementation(project(':app-domain'))
+    implementation(project(':app-common'))
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
+    // Embedded Redis Setting
+    implementation('it.ozimov:embedded-redis:0.7.3') {
+        exclude group: "org.slf4j", module: "slf4j-simple"
+    }
 }
